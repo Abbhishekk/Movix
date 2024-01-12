@@ -34,7 +34,7 @@ console.log(url);
   }
   return (
     <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/:mediaType/:id' element={<Details />} />
@@ -43,7 +43,7 @@ console.log(url);
           <Route path='*' element={<ErrorPage />}  />
 
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
     </BrowserRouter>
   )
 }

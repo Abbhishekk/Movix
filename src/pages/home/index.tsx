@@ -1,4 +1,3 @@
-import React from 'react'
 
 import HeroBanner from './heroBanner'
 
@@ -8,6 +7,10 @@ const Home = () => {
     <div className='homepage'>
        
       <HeroBanner />
+      <div style={{height: 1000}}> 
+
+      </div>
+
     </div>
   )
 }
