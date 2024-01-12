@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import './App.css'
 import { useEffect } from 'react'
@@ -14,16 +15,23 @@ import { Header , Footer } from './components'
 const App = () => {
   const dispatch = useDispatch();
   const {url} = useSelector((state:any) => state.home);
-
+console.log(url);
   useEffect(() => {
-    fetch()
+    fetchAPIConfig()
     
   },[])
-  const fetch = () => fetchData('/movie/popular',{})
-                      .then((data) =>{
-                        console.log(data)
-                        dispatch(getAPIConfiguration(data))
-                      } );
+  const fetchAPIConfig = () =>{
+    fetchData("/configuration",{}).then((res:any) =>{
+      console.log(res);
+      const url = {
+        backdrop : res.images.secure_base_url + "original",
+        poster : res.images.secure_base_url + "original",
+        profile : res.images.secure_base_url + "original",
+
+      }
+      dispatch(getAPIConfiguration(url));
+    })
+  }
   return (
     <BrowserRouter>
         {/* <Header /> */}
