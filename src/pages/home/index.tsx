@@ -1,12 +1,14 @@
 
 import HeroBanner from './heroBanner'
 
-import "./style.css"
+import "./style.scss"
+import Trending from './Trending'
 const Home = () => {
   return (
     <div className='homepage'>
        
       <HeroBanner />
+      <Trending/>
       <div style={{height: 1000}}> 
 
       </div>
