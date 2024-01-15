@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from "react";
 import {
@@ -8,30 +9,35 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 
+
 import ContentWrapper from "../contentWrapper";
 import Img from "../lazyLoadImage/Img";
 import {PosterFallback} from "../../assets/movix-img";
 import CircleRating from "../ratings";
 
 import "./style.scss";
+import Genres from "../genres";
 
 type props ={
     data: any;
     loading: boolean;
-}
+} 
 
 const Carousel = (props:props) => {
 
     const carouselContainer = useRef<any>();
     const {url} = useSelector((state:any) => state.home);
     const navigate = useNavigate();
-    console.log(props.data);
+    // console.log(props.data);
     const navigation = (dir: string) => {
-        if (dir === "left") {
-            carouselContainer.current.scrollLeft -= 300;
-        } else {
-            carouselContainer.current.scrollLeft += 300;
-        }
+        const container = carouselContainer.current;
+
+        const scrollAmount = 
+                        dir === "left" ?
+                        container.scrollLeft -= (container.offsetWidth + 20)
+                        :container.scrollLeft += (container.offsetWidth + 20);
+        
+        container.scrollTo({left: scrollAmount, behavior: "smooth"});
     }
 
     const skItem = () =>{
@@ -72,11 +78,11 @@ const Carousel = (props:props) => {
                         const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback;
                        
                         return(
-                        <div key={item.id} className="carouselItem">
+                        <div key={item.id} className="carouselItem" onClick={() => navigate(`/${item.media_type}/${item.id}`)}>
                             <div className="posterBlock">
                                 <Img src={posterUrl} />
                                 <CircleRating rating={item.vote_average.toFixed(1)} />
-                               
+                                <Genres data={item.genre_ids.splice(0,2)} />
                             </div>
                             <div className="textBlock">
                                 <span className="title">{item.title || item.name}</span>

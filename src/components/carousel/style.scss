@@ -1,6 +1,7 @@
 @import "../../mixins.scss";
 .carousel {
     margin-bottom: 50px;
+    
     .contentWrapper {
         position: relative;
     }
@@ -83,6 +84,7 @@
         margin-right: -20px;
         margin-left: -20px;
         padding: 0 20px;
+        transition: all ease 0.5s;
         @include md {
             gap: 20px;
             overflow: hidden;

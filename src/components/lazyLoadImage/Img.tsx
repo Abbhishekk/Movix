@@ -12,7 +12,7 @@ const Img = ({ src, className }: Props) => {
             className={className || ""}
             alt=""
             effect="blur"
-            src={src}
+            src={`${src}`}
         />
     );
 };
