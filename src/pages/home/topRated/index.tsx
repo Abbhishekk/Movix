@@ -18,7 +18,7 @@ const TopRated = () => {
             <span className='carouselTitle' > Top Rated</span>
             <SwitchTabs data={["Movies","Tv Shows"]} onTabChange={onTabChange}  />
           </ContentWrapper>
-          <Carousel data={data} media={endPoint} loading={loading} />
+          <Carousel data={data} media={endPoint} loading={loading}  />
  
         </div>
     

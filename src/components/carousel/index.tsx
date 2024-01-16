@@ -19,7 +19,7 @@ import "./style.scss";
 import Genres from "../genres";
 
 type props ={
-    title: string;
+    title?: string;
     data: any;
     loading: boolean;
     media: string;

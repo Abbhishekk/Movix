@@ -15,7 +15,7 @@ import { Header , Footer } from './components'
 
 const App = () => {
   const dispatch = useDispatch();
-  const {url} = useSelector((state:any) => state.home);
+  useSelector((state: any) => state.home);
 //console.log(url);
   useEffect(() => {
     fetchAPIConfig()

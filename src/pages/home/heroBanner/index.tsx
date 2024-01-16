@@ -1,12 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {useEffect, useState} from 'react'
 import "./style.scss"
 import {useNavigate} from "react-router-dom"
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 import useFetch from "../../../hooks/useFetch";
-import { fetchData } from '../../../utils/api';
-import { getAPIConfiguration } from '../../../store/homeSlice';
 
 import Img from '../../../components/lazyLoadImage/Img';
 import { ContentWrapper } from '../../../components';
