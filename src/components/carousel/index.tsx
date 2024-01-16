@@ -21,6 +21,7 @@ import Genres from "../genres";
 type props ={
     data: any;
     loading: boolean;
+    media: string;
 } 
 
 const Carousel = (props:props) => {
@@ -76,9 +77,10 @@ const Carousel = (props:props) => {
                 <div className="carouselItems" ref={carouselContainer}>
                     {props.data?.results?.map((item:any) => {
                         const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback;
-                       
+                        const nav = (item.media_type ? item.media_type : props.media)
+                        
                         return(
-                        <div key={item.id} className="carouselItem" onClick={() => navigate(`/${item.media_type}/${item.id}`)}>
+                        <div key={item.id} className="carouselItem" onClick={() => navigate(`/${nav}/${item.id}`)}>
                             <div className="posterBlock">
                                 <Img src={posterUrl} />
                                 <CircleRating rating={item.vote_average.toFixed(1)} />
