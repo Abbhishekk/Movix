@@ -19,12 +19,13 @@ import "./style.scss";
 import Genres from "../genres";
 
 type props ={
+    title: string;
     data: any;
     loading: boolean;
     media: string;
 } 
 
-const Carousel = (props:props) => {
+const Carousel = (props:props ) => {
 
     const carouselContainer = useRef<any>();
     const {url} = useSelector((state:any) => state.home);
@@ -63,6 +64,7 @@ const Carousel = (props:props) => {
     <>
     <div className="carousel" >
         <ContentWrapper>
+            {props.title && <div className="title">{props.title}</div>}
         <BsFillArrowRightCircleFill 
                 className=" carouselRighttNav arrow"
                 onClick={() => navigation("right")}
