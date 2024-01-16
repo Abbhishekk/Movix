@@ -30,9 +30,9 @@ const HeroBanner = () => {
 
   const handleChange = (event:any) => {
     if(event.key === 'Enter' && query.length > 0) {
+      setQuery(event.target.value);
       navigate(`/search/${query}`)
     }
-    setQuery(event.target.value);
   }
 
   return (
@@ -62,11 +62,11 @@ const HeroBanner = () => {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search for a movie or tv show...."
             />
-            <button  className='text-white gap-2 m-5' > Search</button>
+            <button  className='text-white gap-2 m-5' onClick={handleChange} > Search</button>
 
           </div>
         </div>
-     
+      
 
     </ContentWrapper>
 

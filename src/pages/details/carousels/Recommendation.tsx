@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
 
 
 import useFetch from "../../../hooks/useFetch";
@@ -9,7 +8,7 @@ const Recommendation = ({ mediaType, id }:any) => {
     const { data, loading } = useFetch(
         `/${mediaType}/${id}/recommendations`
     );
-
+        // console.log(data)
     return (
         <Carousel
             title="Recommendations"

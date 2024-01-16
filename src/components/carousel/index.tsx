@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useRef } from "react";
+import { useRef } from "react";
 import {
     BsFillArrowLeftCircleFill,
     BsFillArrowRightCircleFill,
@@ -64,7 +64,7 @@ const Carousel = (props:props ) => {
     <>
     <div className="carousel" >
         <ContentWrapper>
-            {props.title && <div className="title">{props.title}</div>}
+            {props.title && <div className="carouselTitle">{props.title}</div>}
         <BsFillArrowRightCircleFill 
                 className=" carouselRighttNav arrow"
                 onClick={() => navigation("right")}
