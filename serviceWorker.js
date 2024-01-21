@@ -2,8 +2,8 @@ var cacheAll = false;
 var CACHE_NAME = 'webapk-cache';
 var urlsToCache = [
 	'/',
-	'/movix-img/movix-logo.png',
-	'/movix-img/movix-logo.svg',
+	'/movix-logo.png',
+	'/movix-logo.svg',
 ];
 var urlsNotToCache = [
 ];
