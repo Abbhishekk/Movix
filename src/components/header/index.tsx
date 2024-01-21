@@ -50,10 +50,6 @@ const Header = () => {
         navigate(`/search/${query}`)
       }
       setQuery(event.target.value);
-      setTimeout(() => {
-        setShowSearch(false);
-
-      },1000)
     }
 
     const openSearch = () => {
